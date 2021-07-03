@@ -1,0 +1,74 @@
+<!--
+HW6 CSCI571 Due Mar 8 @ 11:59PM/2359
+Andrew M. Calhoun
+USC ID: 4458531648
+email: amcalhou@usc.edu
+-->
+<!DOCTYPE HTML>
+    <HEAD>
+        <title>HW6 - TMDB</title>
+        <link href="/static/css/style.css" rel="stylesheet">
+        <script src="/static/js/script.js" rel="js/script"></script>
+    </HEAD>
+    <body onload="loadSite()">
+
+        <div id="grad">
+            <h1>THE MOVIE DB</h1>
+        </div>
+        <div class="body-container">
+            
+        <div id="tabs">
+            <div class="tab_list">
+                <button class="tabs_links" onClick="openTab(event, 'home')">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr;</button>
+                <button class="tabs_links" onClick="openTab(event, 'search')">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &rarr;</button>  
+            </div>
+        </div>
+        <div id="body-division">
+            <div id="home" class="tabContent">
+                <h2 class="home_headers">Trending Movies</h2>
+                <div id='trending_movies'></div>
+                <div class='spacer'></div>
+                <h2 class="home_headers">TV Shows On Air Today</h2>
+                <div id='today_tv'></div>
+            </div>
+            <div id="search" class="tabContent">
+                <div id="search_box"><h2 class="search_headers">Search</h2>
+                <form>
+                    <div id="keyword_search">
+                        <label style="color: white" for="keyword">Keyword<span class="requirement">*</span></label>
+                        <input type="text" id="keyword" name="keywords"><br/>
+                    </div>
+                    <div id="category_search">
+                        <label style="color: white" for="category">Category<span class="requirement">*</span></label>
+                        <select id="category" name="category">
+                            <option value="" selected></option>
+                            <option value="movie">Movies</option>
+                            <option value="tv">TV Shows</option>
+                            <option value="multi">Movies and TV Shows</option>
+                        </select><br/>
+                    </div>
+                    <div id="search_inputs">
+                    <input class="search_buttons" type="button" onClick="getSearch()" value="Search" id="search_button">
+                    <input class="search_buttons" type="button" onClick="clearForm()" value="Clear" id="clear_button">
+                    </div>
+                </form> </div>
+                <div id="search_results"></div>
+            </div>
+            <div id="media_cover">
+                <div id="media_popup">
+                <span id="popup_closer" onClick="closePopup()">&times;</span>
+                <div id="media_details"></div>
+                <div id="media_cast"></div>
+                <div id="media_reviews"></div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <p style="text-align: right">Powered by TMDB<br/>
+                Developed and Designed By Andrew M. Calhoun</p> 
+            </div>
+        </div>
+       
+    </div>
+    </body>   
+</HTML>
